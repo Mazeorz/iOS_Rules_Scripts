@@ -68,7 +68,7 @@ var StoryId = '246834163';
         try{
           // 442 开始为概念版id
           const tabList = new Set([39, 40, 41, 42, 151, 442, 99, 100, 101]);
-          const topList = new Set([176,222]);
+          const topList = new Set([176,222,107]);
           // 102 开始为概念版id
           const bottomList = new Set([177, 178, 179, 181, 102, 103, 104, 105, 106]);
           let obj = JSON.parse(magicJS.response.body);
@@ -77,10 +77,10 @@ var StoryId = '246834163';
             obj['data']['tab'] = tab;
           }
           if (obj['data']['top']){
-            obj['data']['top'].find((e) => {return e.id === 222;}).uri = `bilibili://story/${StoryId}`;
-            obj['data']['top'].find((e) => {return e.id === 222;}).icon = "https://i.loli.net/2021/03/07/MzLTwBO5CgrWYHf.png";
-            obj['data']['top'].find((e) => {return e.id === 222;}).tab_id = "Story_Top";
-            obj['data']['top'].find((e) => {return e.id === 222;}).name = "Story";
+            obj['data']['top'].find((e) => {return e.id === 222||107;}).uri = `bilibili://story/${StoryId}`;
+            obj['data']['top'].find((e) => {return e.id === 222||107;}).icon = "https://i.loli.net/2021/03/07/MzLTwBO5CgrWYHf.png";
+            obj['data']['top'].find((e) => {return e.id === 222||107;}).tab_id = "Story_Top";
+            obj['data']['top'].find((e) => {return e.id === 222||107;}).name = "Story";
             let top = obj['data']['top'].filter((e) =>{return topList.has(e.id);});
             obj['data']['top'] = top;
           }
