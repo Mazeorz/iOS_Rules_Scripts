@@ -1,4 +1,4 @@
-# QX by StitcH
+# QX.StitcH
 
 * t.me/erdongchanyo 的图标 , 为更好体验请长按策略组图标改为透明底
 
