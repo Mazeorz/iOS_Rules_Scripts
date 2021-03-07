@@ -68,7 +68,7 @@ var StoryId = '246834163';
         try{
           // 442 开始为概念版id
           const tabList = new Set([39, 40, 41, 42, 151, 442, 99, 100, 101]);
-          const topList = new Set([176]);
+          const topList = new Set([176,222]);
           // 102 开始为概念版id
           const bottomList = new Set([177, 178, 179, 181, 102, 103, 104, 105, 106]);
           let obj = JSON.parse(magicJS.response.body);
