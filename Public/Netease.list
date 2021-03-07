@@ -1,0 +1,5 @@
+𝐌𝐮𝐬𝐢𝐜𝟏 = http,106.52.127.72,19951
+𝐌𝐮𝐬𝐢𝐜𝟐 = http,os.dlj.tf,20000
+𝐌𝐮𝐬𝐢𝐜𝟑 = http,os.dlj.tf,30000
+𝐌𝐮𝐬𝐢𝐜𝟒 = Shadowsocks,music.desperadoj.com,30001,aes-128-gcm,"desperadoj.com_free_proxy_emx2"
+𝐌𝐮𝐬𝐢𝐜𝟓 = Shadowsocks,music.desperadoj.com,30003,aes-128-gcm,"desperadoj.com_free_proxy_emx2"
