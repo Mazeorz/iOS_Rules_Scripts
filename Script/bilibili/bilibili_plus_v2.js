@@ -11,6 +11,19 @@ var StoryId = '246834163';
       case /^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\?/.test(magicJS.request.url):
         try{
           let obj = JSON.parse(magicJS.response.body);     
+	   
+     // 这里是feed里面，改写全局变量message
+	   /*
+       for (var i = 0; i < obj['data']['items'].length; ++i){
+	      let currUri = obj['data']['items'][i].uri;
+	      if (currUri.startsWith('bilibili://story/')){
+	       var indexOfQuestionMark = currUri.indexOf("?");
+	       StoryId = parseInt(currUri.slice(17,indexOfQuestionMark));
+	       break;
+	      }
+	     } 
+     */
+    
           let items = [];
           for (let item of obj['data']['items'] ){
             if (item.hasOwnProperty('banner_item')){
@@ -25,20 +38,10 @@ var StoryId = '246834163';
                 item['banner_item'] = bannerItems;
                 items.push(item);
               }
-              // 这里是feed里面，改写全局变量message
-  
             }
             else if (!item.hasOwnProperty('ad_info') && (item['card_type'] === 'small_cover_v2' || item['card_type'] === 'large_cover_v1')){
               items.push(item);
             }
-            for (var i = 0; i < obj['data']['items'].length; ++i){
-	            let currUri = obj['data']['items'][i].uri;
-	              if (currUri.startsWith('bilibili://story/')){
-	            	var indexOfQuestionMark = currUri.indexOf("?");
-	              StoryId = parseInt(currUri.slice(17,indexOfQuestionMark));
-		            break;
-	              }
-	            } 
           }
           obj['data']['items'] = items;
           body = JSON.stringify(obj);
