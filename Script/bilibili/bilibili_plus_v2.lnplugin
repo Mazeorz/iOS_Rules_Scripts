@@ -1,4 +1,4 @@
-# BiliBili去广告
+# BiliBili去广告 + Story模式
 
 [Rule]
 DOMAIN-SUFFIX,cm.bilibili.com,REJECT
