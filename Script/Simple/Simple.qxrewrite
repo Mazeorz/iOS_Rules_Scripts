@@ -1,0 +1,35 @@
+# > 简易工具集合包
+
+^https?:\/\/socketio\.ctrip\.com\/api url reject
+^https?://gw.alicdn.com/(t(f|p)s/.+\d{3,4}-\d{4}|mt) url reject
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get\/ url reject
+^https?:\/\/render\.alipay\.com\/p\/s\/h5data\/prod\/spring-festival-2019-h5data\/popup-h5data\.json url reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.((trip\.activity|film\.mtopadvertiseapi)\.querytmsresources|(taobao\.idle\.home|aliyun\.mobile)\.welcome(page)?|.*?\.ads?\.) url reject
+
+# > BoxJs
+^https?://boxjs.net url script-analyze-echo-response https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
+
+# > 微信 去广告&快捷跳转
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad url script-response-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/AD_Wechat.js
+^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/WX_Jump.js
+
+# > 淘宝比价
+^http://.+/amdc/mobileDispatch url script-request-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/TB_Price.js
+^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail url script-response-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/TB_Price.js
+
+# > 京东比价
+^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/JD_Price.js
+
+# > Bahamut （api.gamer.com.tw）
+#https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-request-header https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/AD_Bahamut.js
+#https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-response-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/AD_Bahamut.js
+
+# > Display netflix ratings
+^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D url script-request-header https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/NF_Rating.js
+^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D url script-response-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/NF_Rating.js
+^https?://ios\.prod\.ftl\.netflix\.com/iosui/warmer/.+type=show-ath url script-response-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/NF_Rating_Season.js
+
+# Testflight 解除区域限制
+^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ url script-request-body https://raw.githubusercontent.com/Mazeorz/iOS_Rules_Scripts/main/Script/Simple/js/TF_Download.js
+
+hostname = testflight.apple.com, weixin110.qq.com, mp.weixin.qq.com, api.gamer.com.tw, ios.prod.ftl.netflix.com, trade-acs.m.taobao.com, api.m.jd.com
